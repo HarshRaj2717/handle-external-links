@@ -13,5 +13,11 @@
   "host_permissions": ["<all_urls>"],
   "action": {
     "default_title": "Handle External Links"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "handle-external-links@addons.mozilla.org",
+      "strict_min_version": "110.0"
+    }
   }
 }
