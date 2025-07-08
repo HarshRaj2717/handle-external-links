@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Handle External Links",
+  "version": "1.0",
+  "description": "Handles external links with alert and copy option.",
+  "permissions": ["scripting", "activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_title": "Handle External Links"
+  }
+}
