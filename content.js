@@ -46,6 +46,19 @@ function showPopup(linkUrl) {
     cursor: pointer;
   `;
 
+  const proceedButton = document.createElement("button");
+  proceedButton.id = "proceed-button";
+  proceedButton.textContent = "Proceed to Link";
+  proceedButton.style = `
+    margin-left: 10px;
+    padding: 8px 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  `;
+
   const closeButton = document.createElement("button");
   closeButton.id = "close-button";
   closeButton.textContent = "Close";
@@ -69,11 +82,17 @@ function showPopup(linkUrl) {
     });
   };
 
+  proceedButton.onclick = () => {
+    window.location.href = linkUrl;
+    closePopup();
+  };
+
   closeButton.onclick = closePopup;
 
   popup.appendChild(title);
   popup.appendChild(linkText);
   popup.appendChild(copyButton);
+  popup.appendChild(proceedButton);
   popup.appendChild(closeButton);
 
   document.body.appendChild(popup);
@@ -96,3 +115,11 @@ document.addEventListener(
   },
   true
 );
+
+document.addEventListener("keydown", function (event) {
+  const popup = document.getElementById("external-link-popup");
+  if (popup && event.key === "Escape") {
+    event.stopPropagation();
+    closePopup();
+  }
+});

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Handle External Links",
-  "version": "1.0",
+  "version": "2.0",
   "description": "Handles external links with alert and copy option.",
   "permissions": ["scripting", "activeTab"],
   "content_scripts": [
